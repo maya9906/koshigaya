@@ -1,0 +1,200 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/*---------------------------------------header-----------------------------------------------------*/
+
+
+.header {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+    background-color: rgb(31, 31, 44);
+    color: aqua;
+}
+
+.logo{
+    height: 100px;
+    padding: 3px;
+    background-color: rgb(31, 31, 44);
+    border-radius: 50%;
+}
+
+.title{
+    width: 50%;
+    color: aqua;
+    text-align: center;
+    background-color: rgb(31, 31, 44);
+}
+
+
+.menu {
+    display: flex;
+    font-weight: bold;
+    margin-right: 50px;
+    
+}
+
+.menu li {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 30px;
+    color: black;
+    border: 2px solid aqua;
+    color: aqua;
+}
+
+.menu a{
+    text-decoration: none;
+    color: aqua;
+}
+
+/*---------------------------------------indexhtml-----------------------------------------------------*/
+.home{
+    min-height: 500px;
+    width:auto;
+    padding: 30px;
+}
+
+.home-title{
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 3px solid rgb(118, 118, 118);
+}
+
+.home-text{
+    margin-top: 10px;
+    padding: 30px;
+}
+
+/*---------------------------------------footer-----------------------------------------------------*/
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-end;
+    min-height: 150px; /*to specify the minimum height of an element. */
+    border-top: 2px solid black;
+    background-color: rgb(31, 31, 44);
+}
+
+.footermenu ul {
+    margin-top: 30px;
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+}
+
+.footermenu li {
+    margin-right: 10px;
+    border: 2px solid aqua;
+}
+
+.footermenu a{
+    text-decoration: none;
+    color: aqua;
+}
+
+
+/*---------------------------------------page1-----------------------------------------------------*/
+
+.page1-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+    height: 700px;
+}
+
+.menubox{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 20px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.menubox div{
+    margin: 30px;
+    border: 2px solid black;
+}
+
+.menubox a{
+    text-decoration: none;
+    color: black;
+}
+
+.introbox{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-around;
+    border: 2px solid black;
+    width: 1000px;
+    margin: 20px;
+}
+
+.introbox img{
+    height: 200px;
+    width: 200px;
+}
+
+
+/*---------------------------------------page2-----------------------------------------------------*/
+
+.page2-text{
+    margin: 90px;
+    padding: 30px;
+    border: 2px solid black;
+}
+
+.page2-text p{
+    margin: 0 auto;
+    max-width: 100%; /* setting the maximum width of the text to fit the parent element. */
+    width: 100%; 
+    height: auto;
+    background-color: rgb(135, 180, 135);
+    word-wrap: break-word; /* wrapping long words*/
+}
+
+/*---------------------------------------page3-----------------------------------------------------*/
+
+.page3-container{
+    margin: 70px 20px;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.page3-container img{
+    float: left;
+    height: 200px;
+    width: 200px;
+}
+
+.page3-container p{
+    margin: 10px;
+}
+
+/*---------------------------------------page4-----------------------------------------------------*/
+
+.page4-container{
+    margin: 80px 20px;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.page4-container img{
+    float: right;
+    height: 200px;
+    width: 200px;
+}
+
+.page3-container p{
+    margin: 10px;
+}
