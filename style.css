@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-/*---------------------------------------header-----------------------------------------------------*/
+/*---------------------------------------nav-----------------------------------------------------*/
 
 
 .header {
@@ -35,14 +35,13 @@
 .menu {
     display: flex;
     font-weight: bold;
-    margin-right: 50px;
-    
 }
 
 .menu li {
     text-decoration: none;
     display: inline-block;
     margin-right: 30px;
+    margin-bottom: 10px;
     color: black;
     border: 2px solid aqua;
     color: aqua;
@@ -51,6 +50,143 @@
 .menu a{
     text-decoration: none;
     color: aqua;
+}
+
+.hamburger{
+    display: none;
+}
+
+@media (max-width: 600px){
+    .menu{
+        display: none;
+    }
+
+
+    .hamburger {
+        display: block;
+    }
+
+
+    .hamburger-open {
+        position: fixed; /*位置を固定 */
+        top: 0;  /* 最上部 */
+        right: 0rem;  /* 右端 */
+        /* 中の要素を上下中央寄せ */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* サイズ指定 */
+        height: 70px;
+        width: 70px;
+        margin-top: 20px;
+        z-index: 100;
+        cursor: pointer;
+    }
+
+    .hamburger-open span,         /* 真ん中の線 */
+    .hamburger-open span:before,  /* 上の線 */
+    .hamburger-open span:after {  /* 下の線 */
+        content: "";
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background-color: #e2e2e2;
+        transition: .2s;
+        /* 3本線の位置は絶対位置で指定 */
+        position: absolute;
+        }
+    /* 上の線の位置 */
+    .hamburger-open span:before {
+        /* 真ん中の線と離す距離 */
+        bottom: 8px;
+    }
+    /* 下の線の位置 */
+    .hamburger-open span:after {
+        /* 真ん中の線と離す距離 */
+        top: 8px;
+    }
+
+    #hamburger-check:checked ~ .hamburger-open span { /*チェックされた状態にあるハンバーガーメニューに、兄弟タグであるスパンがどう動くのか*/
+        background: rgb(31, 31, 44);
+    }
+
+    #hamburger-check:checked ~ .hamburger-open span::before {
+        bottom: 0;
+        transform: rotate(45deg); /*ななめにする*/
+    }
+    
+    #hamburger-check:checked ~ .hamburger-open span::after {
+        top: 0;
+        transform: rotate(-45deg); /*ななめにする*/
+    }
+
+    /* メニューのデザイン*/
+    .hamburger-content {
+        width: 100%;
+        height: 20%;
+        position: fixed;
+        top: 0;
+        left: 100%;/* メニューを画面の外に飛ばす */
+        transition: .2s;
+        margin-top: 3.5rem;
+    }
+    .hamburger-link{
+        text-decoration: none;
+    }
+
+    .hamburger-link li{
+        margin-top: 0.5rem;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .hamburger-link a {
+        display: block;
+        font-size: 13px;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    #h-lists-1 a {
+        background-color: rgba(122, 233, 226, 0.665);
+        color: white;
+        text-decoration: none;
+    }
+
+    #h-lists-2 a {
+        background-color: rgba(122, 203, 233, 0.652);
+        color: white;
+        text-decoration: none;
+    }
+
+    #h-lists-3 a {
+        background-color: rgba(122, 178, 233, 0.652);
+        color: white;
+        text-decoration: none;
+    }
+
+
+    #h-lists-4 a {
+        background-color: rgba(122, 139, 233, 0.652);
+        color: white;
+        text-decoration: none;
+    }
+
+
+    #h-lists-5 a {
+        background-color: rgba(154, 122, 233, 0.652);
+        color: white;
+        text-decoration: none;
+    }
+
+    /* アイコンがクリックされたらメニューを表示 */
+    #hamburger-check:checked ~ .hamburger-content {
+        left: 70vw;/* メニューを画面に入れる */
+    }
+
 }
 
 /*---------------------------------------indexhtml-----------------------------------------------------*/
@@ -145,6 +281,81 @@
     width: 200px;
 }
 
+@media (max-width: 980px){
+    .page1-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        margin: auto;
+        height: auto;
+    }
+
+    .menubox{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        /* width: 80vw;
+        margin: 15px auto auto auto; */
+        border: none;
+        width: 100%;
+        margin-left: 0px;
+        
+    }
+
+    .menubox div{
+        width: 30vw;
+        font-size: 1.5vw;
+        margin: 10px;
+        padding: 7px 2px;
+        border: 2px solid black;
+    }
+
+    
+    .introbox{
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(3, 200px);
+        gap: 5px;
+        width: 90vw;
+        margin:10px auto;
+        padding: 10px;
+    }
+    .introbox div{
+        
+    }
+
+    .introbox img{
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media (max-width: 600px){
+
+    .menubox{
+        border: none;
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    .menubox div{
+        width: 30vw;
+        height: 30px;
+        font-size: 2vw;
+        margin: 10px;
+        padding: 20px 2px 0px 2px;
+        border: 1px solid black;
+    }
+
+    .introbox{
+        grid-template-columns: repeat(1, 200px);
+        grid-template-rows: repeat(8, 200px);
+        width: 80vw;
+    }
+}
+
 
 /*---------------------------------------page2-----------------------------------------------------*/
 
@@ -159,9 +370,22 @@
     max-width: 100%; /* setting the maximum width of the text to fit the parent element. */
     width: 100%; 
     height: auto;
-    background-color: rgb(135, 180, 135);
+    background-color: rgb(135, 170, 180);
     word-wrap: break-word; /* wrapping long words*/
 }
+
+
+@media (max-width: 600px){
+
+    .page2-text{
+        margin: 10px 20px;
+        padding: 20px;
+        text-align: center;
+    }
+    
+}
+
+
 
 /*---------------------------------------page3-----------------------------------------------------*/
 
@@ -175,16 +399,41 @@
     float: left;
     height: 200px;
     width: 200px;
+    margin: 20px;
 }
 
 .page3-container p{
     margin: 10px;
 }
+@media (max-width: 600px){
+
+    .page3-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 30px 20px;
+        border: 1px solid black;
+    }
+
+    .page3-container img{
+        margin: 0 auto;
+    }
+
+    .page3-container h2{
+        margin: 20px 10px 10px 10px;
+        text-align: center;
+    }
+    .page3-container p{
+        margin: 10px;
+        text-align: center;
+    }
+}
+
 
 /*---------------------------------------page4-----------------------------------------------------*/
 
 .page4-container{
-    margin: 80px 20px;
+    margin: 70px 20px;
     padding: 20px;
     border: 2px solid black;
 }
@@ -193,8 +442,33 @@
     float: right;
     height: 200px;
     width: 200px;
+    margin: 20px;
 }
 
-.page3-container p{
+.page4-container p{
     margin: 10px;
+}
+
+@media (max-width: 600px){
+
+    .page4-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 30px 20px;
+        border: 1px solid black;
+    }
+
+    .page4-container img{
+        margin: 0 auto;
+    }
+
+    .page4-container h2{
+        margin: 20px 10px 10px 10px;
+        text-align: center;
+    }
+    .page4-container p{
+        margin: 10px;
+        text-align: center;
+    }
 }
